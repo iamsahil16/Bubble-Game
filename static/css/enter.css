@@ -1,0 +1,71 @@
+/* General styles shared with other pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #e0f7e9; /* Light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container for the game button */
+.game-container {
+    background-color: #ffffff; /* White background */
+    padding: 40px;
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow for more depth */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: popIn 0.5s ease; /* Smooth pop-in animation */
+}
+
+/* Flexbox to center the button */
+.button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Enter Game Button */
+.enter-game-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #66bb6a; /* Light green button */
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase; /* Makes text all uppercase */
+    letter-spacing: 1.5px; /* Adds a bit of spacing between letters */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Adds slight button shadow */
+}
+
+.enter-game-btn:hover {
+    background-color: #4caf50; /* Darker green on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhances shadow on hover */
+    transform: translateY(-3px); /* Lift the button slightly on hover */
+}
+
+/* Add pop-in animation */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

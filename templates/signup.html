@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="form-box">
+            <h2>Sign Up</h2>
+            <form action="{{ url_for('signup') }}" method="POST">
+                <!-- Flask-WTF hidden CSRF token -->
+                {{ form.hidden_tag() }}
+                
+                <!-- Username field -->
+                <div class="input-box">
+                    {{ form.username.label }}
+                    {{ form.username(class="form-input") }}
+                    {% if form.username.errors %}
+                        <div class="error-message">
+                            {{ form.username.errors[0] }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Email field -->
+                <div class="input-box">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-input") }}
+                    {% if form.email.errors %}
+                        <div class="error-message">
+                            {{ form.email.errors[0] }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Password field -->
+                <div class="input-box">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-input") }}
+                    {% if form.password.errors %}
+                        <div class="error-message">
+                            {{ form.password.errors[0] }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Verify Password field -->
+                <div class="input-box">
+                    {{ form.verify_password.label }}
+                    {{ form.verify_password(class="form-input") }}
+                    {% if form.verify_password.errors %}
+                        <div class="error-message">
+                            {{ form.verify_password.errors[0] }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="signup-btn">Sign Up</button>
+
+                <!-- Login link -->
+                <p>Already have an account? <a href="{{ url_for('signin') }}">Log in</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
